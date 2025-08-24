@@ -8,6 +8,7 @@ char SonicCD_dir[1024];
 char Sonic1_dir[1024];
 char Sonic2_dir[1024];
 char Sonic_Mania_dir[1024];
+char chosse_game;
 
 
 
@@ -50,32 +51,45 @@ char run_Sonic_Mania(char cwd[1024]){
 
 }
 
+int launch(char cwd[1024]){
+    do{
+    
+    printf("Chosse a game to play:\n 1 - Sonic CD\n 2 - Sonic 1\n 3 - Sonic 2\n 4 - Sonic Mania\n 0 - Exit\n");
+    scanf("%c", &chosse_game);
+    while (getchar() != '\n');
+    if (chosse_game == '1'){
+        run_Sonic_CD(cwd);
+    }
+    if (chosse_game == '2'){
+        run_Sonic_1(cwd);
+    }
+    if (chosse_game == '3'){
+        run_Sonic_2(cwd);
+    }
+    if (chosse_game == '4'){
+        run_Sonic_Mania(cwd);
+
+    }
+    if (chosse_game == '0'){
+        break;
+    }
+    else{
+        printf("Invalid input");
+
+    }
+    }
+while(1);
+}
+
 
 int main() {
     char cwd[1024];
     _getcwd(cwd, sizeof(cwd));
+    launch(cwd);
 
-    int chosse_game;
-    printf("Chosse a game to play:\n 1 - Sonic CD\n 2 - Sonic 1\n 3 - Sonic 2\n 4 - Sonic Mania\n");
-    scanf("%d", &chosse_game);
-
-
-    if (chosse_game == 1){
-        run_Sonic_CD(cwd);
-
-    }
-    if (chosse_game == 2){
-        run_Sonic_1(cwd);
-
-    }
-    if (chosse_game == 3){
-        run_Sonic_2(cwd);
-
-    }
-    if (chosse_game == 4){
-        run_Sonic_Mania(cwd);
-
-    }
     
+
+
+
 
 }
