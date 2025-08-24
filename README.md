@@ -18,6 +18,6 @@ To set it up make this folder structure:
     * Data.rsdk
 + RSDKv5
   * Sonic Mania
-    * RSDKv5U
+    * RSDKv5U.exe
     * Data.rsdk
     * Game.dll
